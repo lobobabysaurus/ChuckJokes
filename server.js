@@ -2,7 +2,7 @@
 var net = require('net');
 var assert = require('assert');
 var mongoClient = require('mongodb').MongoClient;
-var mongoUrl = "mongodb://localhost:27017/NodeMongo";
+var mongoUrl = "mongodb://localhost:27017/NodeQOTDDB";
 
 // Create the server
 net.createServer(function (socket) {
