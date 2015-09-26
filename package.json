@@ -4,7 +4,8 @@
   "description": "A QOTD Server implementation in Node",
   "main": "server.js",
   "dependencies": {
-    "mongodb": "~2.0.35"
+    "mongodb": "~2.0.35",
+    "promise": "~7.0.4"
   },
   "devDependencies": {},
   "scripts": {

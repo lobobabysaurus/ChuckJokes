@@ -1,27 +1,36 @@
-// Initialize all required Node packages/plugins
 var net = require('net');
-var assert = require('assert');
-var mongoClient = require('mongodb').MongoClient;
-var mongoUrl = "mongodb://localhost:27017/NodeQOTDDB";
+var log = console.log;
+var Promise = require('promise');
 
-// Create the server
-net.createServer(function (socket) {
-    // Connect to the database
-    mongoClient.connect(mongoUrl, function(err, db) {
-        assert.equal(err, null, "Error Connecting to the Database");
-        // Get all Quotes
-        var quotesCollection = db.collection('quotes');
-        quotesCollection.find().toArray(function(err, quotes) {
-            assert.equal(err, null, "Error reading Quotes");
-            //Write each quote to the socket output
-            quotes.forEach(function(quote) {
-                socket.write(quote["quote"] + " -- " + quote["author"] + "\n");
-            });
-            //Close the db and socket
-            db.close();
+var statements = [];
+
+log("Starting Chuck Norris joke loading");
+var cn = require('./api_readers/chuckNorrisReader.js');
+var jokes = cn.loadJokes().then(function (jokes) {
+    return Promise.resolve(jokes);
+});
+statements.push(jokes);
+
+log("Starting database quote loading");
+var lq = require('./db_readers/localMongoReader.js');
+var quotes = lq.loadDBQuotes().then(function (quotes) {
+    return Promise.resolve(quotes);
+});
+statements.push(quotes);
+
+log("Waiting on statement loading to finish");
+var loader = Promise.all(statements);
+loader.then(function (statements){
+        log("Statement Loading Complete");
+        var data = [];
+        for(var i=0;i<statements.length;i++){
+            data = data.concat(statements[i]);
+        }
+        log("Creating QOTD Server");
+        net.createServer(function (socket) {
+            socket.write(data[Math.floor(Math.random()*data.length)] + "\n");
             socket.destroy();
-        });
-    });
-}).listen(54321, '127.0.0.1');
-
-console.log('QOTD Server Running\n');
+        }).listen(54321, '127.0.0.1');
+        log('QOTD Server Running\n');
+    }
+);
