@@ -17,7 +17,10 @@
     "url": "https://lobobabysaurus@github.com/lobobabysaurus/NodeQOTD.git"
   },
   "keywords": [
-    "QOTD"
+    "QOTD",
+    "Node",
+    "Mongo",
+    "Promise"
   ],
   "author": "Phil R Simmons",
   "license": "GPL-2.0",
