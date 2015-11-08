@@ -21,5 +21,6 @@ cn.loadJokes().then(function (jokes) {
         assert.equal(err, null, "Error writing to the Database");
       });
     });
+    db.close();
   });
 });
