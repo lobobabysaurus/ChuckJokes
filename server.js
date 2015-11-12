@@ -1,21 +1,17 @@
+var cn = require('./api_readers/chuckNorrisReader.js');
 var net = require('net');
 var log = console.log;
 var Promise = require('promise');
 
 var statements = [];
 
-log("Starting database quote loading");
-var lq = require('./db_readers/localMongoReader.js');
-var quotes = lq.loadDBQuotes().then(function (quotes) {
-  return Promise.resolve(quotes);
-});
-
-quotes.then(function (quoteSet){
-  log("Statement Loading Complete");
-  log("Creating QOTD Server");
+log("Starting Chuck Norris joke loading");
+cn.loadJokes().then(function (jokes) {
+  log("Joke Loading Complete");
+  log("Creating Joke Server");
   net.createServer(function (socket) {
-      socket.write(quoteSet[Math.floor(Math.random() * quoteSet.length)] + "\n");
+      socket.write(jokes[Math.floor(Math.random() * jokes.length)] + "\n");
       socket.destroy();
   }).listen(54321, '127.0.0.1');
-  log('QOTD Server Running\n');
+  log('Chuck Joke Server Running\n');
 });
