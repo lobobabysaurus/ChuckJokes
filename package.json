@@ -1,6 +1,6 @@
 {
   "name": "chuck-jokes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Chuck Norris joke of the day server",
   "main": "index.js",
   "scripts": {
