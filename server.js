@@ -7,7 +7,7 @@ log('Loading Jokes');
 var chuckJoke = new ChuckNorris();
 
 net.createServer(function (socket) {
-    socket.destroy();
+  socket.destroy();
 }).listen(54321, function() {
   log('Chuck Joke Server Running');
 });
