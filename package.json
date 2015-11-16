@@ -1,29 +1,26 @@
 {
-  "name": "NodeQOTDServer",
+  "name": "ChuckJokes",
   "version": "0.0.2",
-  "description": "A QOTD Server implementation in Node",
+  "description": "A Chuck Norris joke of the day server",
   "main": "server.js",
-  "dependencies": {
-    "promise": "~7.0.4"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://lobobabysaurus@github.com/lobobabysaurus/NodeQOTD.git"
+    "url": "https://lobobabysaurus@github.com/lobobabysaurus/ChuckJokes.git"
   },
   "keywords": [
-    "QOTD",
+    "Chuck Norris",
     "Node",
-    "Mongo",
-    "Promise"
+    "Joke",
+    "Server",
+    "ICNDb"
   ],
   "author": "Phil R Simmons",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/lobobabysaurus/NodeQOTD/issues"
+    "url": "https://github.com/lobobabysaurus/ChuckJokes/issues"
   }
 }
