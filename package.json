@@ -2,10 +2,10 @@
   "name": "ChuckJokes",
   "version": "0.0.2",
   "description": "A Chuck Norris joke of the day server",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "src": "server.json",
+    "test": "node_modules/grunt-cli/bin/grunt mochaTest"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/lobobabysaurus/ChuckJokes/issues"
+  },
+  "dependencies": {
+    "chuck-norris-api": "^1.0.0"
   }
 }
