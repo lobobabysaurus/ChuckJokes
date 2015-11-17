@@ -1,7 +1,7 @@
 {
   "name": "chuck-jokes",
-  "version": "1.0.1",
-  "description": "A Chuck Norris joke of the day server",
+  "version": "1.0.2",
+  "description": "A Chuck Norris joke of the day server based on the ICNDb",
   "main": "index.js",
   "scripts": {
     "src": "server.json",
@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "chuck-norris-api": "^1.0.0",
-    "yargs": "^3.30.0"
+    "yargs": "3.30.0"
   }
 }
