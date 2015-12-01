@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 var net = require('net');
 var log = console.log;
 
@@ -54,5 +56,5 @@ net.createServer(function (socket) {
     socket.destroy();
   });
 }).listen(argv.p, function() {
-  log('Chuck Joke Server Running');
+  log('Chuck Joke Server Running on Port ' + argv.p);
 });

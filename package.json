@@ -1,12 +1,12 @@
 {
   "name": "chuck-jokes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Chuck Norris joke of the day server based on the ICNDb",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "src": "server.json",
-    "test": "node_modules/grunt-cli/bin/grunt mochaTest"
+    "src": "server.js"
   },
+  "bin": "./server.js",
   "repository": {
     "type": "git",
     "url": "https://lobobabysaurus@github.com/lobobabysaurus/ChuckJokes.git"
@@ -24,7 +24,7 @@
     "url": "https://github.com/lobobabysaurus/ChuckJokes/issues"
   },
   "dependencies": {
-    "chuck-norris-api": "^1.0.0",
+    "chuck-norris-api": "^1.0.5",
     "yargs": "3.30.0"
   }
 }
