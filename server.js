@@ -57,4 +57,11 @@ net.createServer(function (socket) {
   });
 }).listen(argv.p, function() {
   log('Chuck Joke Server Running on Port ' + argv.p);
+}).on('error', function(err) {
+  if (err.code === 'EACCES' && argv.p < 1024) {
+    log('Running server on ports below 1024 must be done as root');
+  }
+  else {
+    log('There has been an error starting the server');
+  }
 });
