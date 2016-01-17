@@ -20,7 +20,8 @@ JokeCache.prototype.fillBuffer = function() {
 
 JokeCache.prototype.getJoke = function() {
   while (this.jokeBuffer.length === 0);
-  var returnJoke = this.jokeBuffer[this.currentJoke].joke;
+  var jokeNumberInSet = this.currentJoke % this.jokeBuffer.length;
+  var returnJoke = this.jokeBuffer[jokeNumberInSet].joke;
   if (this.currentJoke === this.totalJokes) {
     this.jokeBuffer = [];
     this.currentJoke = 0;
