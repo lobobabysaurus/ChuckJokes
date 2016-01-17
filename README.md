@@ -8,15 +8,17 @@ If a port is not specified when running the server, it will run on port 17 and m
 run with root/admin rights.
 
 ## Usage
-chuck-jokes -f [string] -l [string] -o [string] -e [string] -p [number]  
+Usage: chuck-jokes [options]
 
-Options:  
-  -f, --first    First name to replace Chuck's in jokes                 [string]  
-  -l, --last     Last name to replace Chuck's in jokes                  [string]  
-  -o, --only     Comma separated list of categories to limit jokes      [string]  
-  -e, --exclude  Comma separated list of categories to exclude jokes    [string]  
-  -p, --port     Port server will run on                           [default: 17]  
-  -h, --help     Show help                                             [boolean]  
+Options:
+  -f, --first    First name to replace Chuck's in jokes                 [string]
+  -l, --last     Last name to replace Chuck's in jokes                  [string]
+  -o, --only     Comma separated list of categories to limit jokes      [string]
+  -e, --exclude  Comma separated list of categories to exclude jokes    [string]
+  -c, --cache    Times to loop through all jokes before cache refresh
+                                                                    [default: 4]
+  -p, --port     Port server will run on                           [default: 17]
+  -h, --help     Show help                                             [boolean]
   --version      Show version number                                   [boolean]
 
 [rfc-link]: https://tools.ietf.org/html/rfc865
