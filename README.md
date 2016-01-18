@@ -10,7 +10,7 @@ run with root/admin rights.
 ## Usage
 Usage: chuck-jokes [options]
 
-Options:
+Options:  
   -f, --first    First name to replace Chuck's in jokes                 [string]  
   -l, --last     Last name to replace Chuck's in jokes                  [string]  
   -o, --only     Comma separated list of categories to limit jokes      [string]  

@@ -1,5 +1,4 @@
-var ChuckNorris = require('chuck-norris-api');
-var chuckJoke = new ChuckNorris();
+var chuckJoke = require('chuck-norris-api');
 
 function JokeCache(options, cacheLoops) {
   this.jokeBuffer = [];
